@@ -612,6 +612,56 @@ const cat1 = {
   // Call the function with cat1 and cat2 as arguments
   console.log(combineCats(cat1, cat2));
 
+  function combineCats(mama, papa) {
+    // Combine the cat names, set the age to 1, and combine breeds with a hyphen
+    return {
+      name: mama.name + papa.name,
+      age: 1,
+      breed: mama.breed + '-' + papa.breed
+    };
+  }
+  
+  // Example usage:
+  
+  // Defining two cat objects
+  let cats1 = { name: "Joe", age: 19, breed: "Mog" };
+  let cats2 = { name: "Jam", age: 45, breed: "Siamese" };
+  
+  // Calling the combineCats function and logging the result
+  console.log(combineCats(cats1, cats2)); // { name: "JoeJam", age: 1, breed: "Mog-Siamese" }
+  
+  // You can also pass objects directly:
+  console.log(combineCats({ name: "Craig", age: 20, breed: "unknown" }, { name: "Linda", age: 20, breed: "undefined" }));
+  // { name: "CraigLinda", age: 1, breed: "unknown-undefined" }
+
+
+  console.log(combineCats(cat1, cat2));
+
+  function combineCats(mama, papa) {
+    // Log the incoming cat objects (mama and papa)
+    console.log(mama);
+    console.log(papa);
+  
+    // Combine the name, set age to 1, and combine the breed with a hyphen
+    return {
+      name: mama.name + papa.name,    // Concatenate names of mama and papa
+      age: 1,                         // The new cat's age is always 1
+      breed: mama.breed + '-' + papa.breed  // Concatenate the breeds with a hyphen
+    };
+  }
+  
+  // Define some cat objects for the example
+  let catss1 = { name: "Joe", age: 19, breed: "Mog" };
+  let catss2 = { name: "Jam", age: 45, breed: "Siamese" };
+  
+  // Console log a three-level deep call
+  console.log(
+    combineCats(
+      combineCats(combineCats(catss1, catss2), combineCats(catss1, catss2)),
+      combineCats(combineCats(catss1, catss2), combineCats(catss1, catss2))
+    )
+  );
+
   
 
 
